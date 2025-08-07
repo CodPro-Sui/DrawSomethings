@@ -21,8 +21,8 @@ let reset = document.getElementById("reset");
 
 
 let background = document.getElementById("background");
-let currentColor = "#000";
-let bgColor = "#000";
+let currentColor = "#000000";
+let bgColor = "#000000";
 clr.addEventListener("input", () => {
   if(background.checked){
     ctx.fillStyle = clr.value;
@@ -56,6 +56,10 @@ let y = (touch.clientY - edge.top);
   ctx.lineTo(x, y);
   ctx.lineCap = "round";
   ctx.lineWidth = 3;
+  ctx.shadowColor = `${currentColor}63`;
+  ctx.shadowBlur = 8;
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
   ctx.strokeStyle = currentColor;
   ctx.stroke();
   
